@@ -35,4 +35,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/', function(){
+    $car = \App\Models\Car::findOrNew(1);
+    dd($car);
+});
+
 require __DIR__.'/auth.php';
